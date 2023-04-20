@@ -6,10 +6,16 @@ public class shootProjectile : MonoBehaviour
 {
 
     //vars
+    [Header("Shoot Settings")]
     public GameObject projectile; //prefab, object that is going to be shot. should have a rigidbody
     public Transform shootPoint; // point to shoot from
-    public float shootForce = 50; // force applied to projectile
+    public float shootForce = 50; // force applied to projectile. affects speed 
     public float timeBetweenShots = 5f;
+
+    [Header("Aim Settings")]
+    public Transform aimLeft;
+    public Transform aimRight;
+
 
 
     // Start is called before the first frame update
@@ -33,10 +39,25 @@ public class shootProjectile : MonoBehaviour
 
     }
 
+    void decideAim() //chooses which hand to shoot at randomly
+    {
+        int choiceint = Random.Range(0, 2); //generates a 0 or 1, 0 is left 1 is right
+        if (choiceint == 0)
+        {
+            shootPoint.LookAt(aimLeft.position);
+        }
+
+        else
+        {
+            shootPoint.LookAt(aimRight.position);
+        }
+    }
+
     //shoots, waits for seconds, and then shoots again. infinite loop right now but should have a way to break later on
     IEnumerator timedShoot()
     {
         yield return new WaitForSeconds(timeBetweenShots);
+        decideAim();
         shoot();
         StartCoroutine(timedShoot());
     }
