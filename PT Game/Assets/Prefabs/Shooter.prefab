@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6015882282652517398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.44}
+  m_LocalPosition: {x: 0, y: 0, z: -7.48}
   m_LocalScale: {x: 0.32096544, y: 0.43295667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -154,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 8173229208592545651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.81, z: 9.17}
-  m_LocalScale: {x: 3.1156, y: 2.3097, z: 1}
+  m_LocalScale: {x: 8.291547, y: 2.3097, z: 0.36535513}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2461642914743537588}
@@ -176,3 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2321112931429893799, guid: f49b0fb8a0de38345a8407c66ba322a2, type: 3}
   shootPoint: {fileID: 6376643839393321044}
+  shootForce: 50
+  timeBetweenShots: 5
+  aimLeft: {fileID: 0}
+  aimRight: {fileID: 0}
