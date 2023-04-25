@@ -5,6 +5,7 @@ using UnityEngine;
 public class CatchProjectile : MonoBehaviour
 {
     public Transform respawnPoint; // Assign the respawn point for the fireball
+    public GameObject fireball; 
 
     private bool isTrackingFireball; // Flag to track if a fireball is being tracked
 
@@ -46,7 +47,7 @@ public class CatchProjectile : MonoBehaviour
     public void RespawnFireball()
     {
         // Instantiate a new fireball prefab at the respawn point
-        GameObject newFireball = Instantiate(/* Replace with your fireball prefab */, respawnPoint.position, Quaternion.identity);
+        GameObject newFireball = Instantiate(fireball, respawnPoint.position, Quaternion.identity);
 
         // Set the fireball's velocity, direction, or any other properties as needed
 
