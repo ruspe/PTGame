@@ -46,7 +46,11 @@ public class CatchProjectile : MonoBehaviour
     public void RespawnFireball()
     {
         // Instantiate a new fireball prefab at the respawn point
-        GameObject newFireball = Instantiate(/* Replace with your fireball prefab */, respawnPoint.position, Quaternion.identity);
+       /*  
+        * commented out this line to get rid of compiler errors so i can save.
+        * Add back in when no compiler errors occur
+        *  GameObject newFireball = Instantiate(   Replace with your fireball prefab   , respawnPoint.position, Quaternion.identity);
+        */
 
         // Set the fireball's velocity, direction, or any other properties as needed
 
