@@ -91,8 +91,10 @@
                 "description": "Starting speed for the player",
                 "$type": "RangeParameter",
                 "$id": "7"
-            }
+            },
+
             {
+
                 "min_": -10.0,
                 "max_": -0.1,
                 "value_": -0.3,
@@ -104,6 +106,17 @@
                 "$id": "8"
             }
 
+            {
+                "min_": 1.0,
+                "max_": 2.0,
+                "value_": 1.0,
+                "tick_": 0.1,
+                "name": "Paddle Size",
+                "alias": "Paddle Size",
+                "description": "Scales the size of the paddle",
+                "$type": "RangeParameter",
+                "$id": "12"
+            }
         ]
     },
     "parameters": {
@@ -127,6 +140,10 @@
         },
         "Enable Suki Extents": {
             "$ref": "9"
+        },
+        "Paddle Size": {
+            "$ref": "12"
         }
     }
 }
+//test1

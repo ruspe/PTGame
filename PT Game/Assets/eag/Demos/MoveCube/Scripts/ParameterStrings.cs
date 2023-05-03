@@ -11,4 +11,5 @@ public class ParameterStrings
 {
     public static string STARTING_SPEED = "Player Starting Speed";
 	public static string GRAVITY = "Gravity";
+    public static string SCALE = "Paddle Size";
 }
