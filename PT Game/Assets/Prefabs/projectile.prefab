@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8747929796467316408}
   - component: {fileID: 1283474298558287774}
   - component: {fileID: -1369725421131864016}
+  - component: {fileID: -2583387700269887776}
   m_Layer: 0
   m_Name: projectile
   m_TagString: projectile
@@ -172,6 +173,23 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &-2583387700269887776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321112931429893799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599dcc25e2e956647a68a498c836b625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decalPrefab: {fileID: 7982704030533023188, guid: d901befba897fe949a9cb086ba97d17f, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  plane: {fileID: 0}
 --- !u!1 &5035021795847809840
 GameObject:
   m_ObjectHideFlags: 0
