@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class shootProjectile : MonoBehaviour
 {
-
+    public Animator anims;
     //vars
     [Header("Shoot Settings")]
     public GameObject projectile; //prefab, object that is going to be shot. should have a rigidbody
@@ -17,13 +17,13 @@ public class shootProjectile : MonoBehaviour
     public Transform aimLeft;
     public Transform aimRight;
 
-    private Animator anims;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        anims = GetComponent<Animator>();
+       
         anims.SetFloat("chargeSpeed", chargeSpeed);
 
         StartCoroutine(timedShoot());
