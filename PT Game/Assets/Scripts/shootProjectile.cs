@@ -11,16 +11,21 @@ public class shootProjectile : MonoBehaviour
     public Transform shootPoint; // point to shoot from
     public float shootForce = 50; // force applied to projectile. affects speed 
     public float timeBetweenShots = 5f;
+    public float chargeSpeed = .5f;
 
     [Header("Aim Settings")]
     public Transform aimLeft;
     public Transform aimRight;
 
+    private Animator anims;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        anims = GetComponent<Animator>();
+        anims.SetFloat("chargeSpeed", chargeSpeed);
+
         StartCoroutine(timedShoot());
 
     }
@@ -53,12 +58,18 @@ public class shootProjectile : MonoBehaviour
         }
     }
 
+    public void chargeShot()
+    {
+        //triggers charge shot animation
+        anims.SetTrigger("chargeShot");
+    }
+
     //shoots, waits for seconds, and then shoots again. infinite loop right now but should have a way to break later on
     IEnumerator timedShoot()
     {
         yield return new WaitForSeconds(timeBetweenShots);
         decideAim();
-        shoot();
+        chargeShot();
         StartCoroutine(timedShoot());
     }
 }
