@@ -20,7 +20,7 @@ public class BallHit : MonoBehaviour
     {
         if (other.tag == "Paddle")
         {
-            transform.position *= -1; 
+            transform.position *= -100; 
         }
     }
 }

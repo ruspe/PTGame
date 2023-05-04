@@ -19,7 +19,7 @@ public class handCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ballsCaughtScore.text = "Balls Caught: " + ballsCaught.ToString();
+        ballsCaughtScore.text = "Balls hit: " + ballsCaught.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class handCollision : MonoBehaviour
         {
             Debug.Log("Caught");
             ballsCaught += 1;
-            other.gameObject.SetActive(false); 
+            other.gameObject.SetActive(false);
         }
     }
 }

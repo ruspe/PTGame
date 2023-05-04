@@ -392,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49124253}
   m_LocalRotation: {x: 0.49889487, y: 0.50110275, z: 0.50110275, w: 0.49889487}
-  m_LocalPosition: {x: 22.02, y: 3.1, z: -12.18}
+  m_LocalPosition: {x: 22.02, y: 3.1, z: -10.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1343,7 +1343,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99, y: 1.51, z: 0.11030271}
+  m_Size: {x: 0.99, y: 1.51, z: 0.24}
   m_Center: {x: -0.00000029811503, y: 0.64045674, z: -0.00000054894275}
 --- !u!114 &241422720
 MonoBehaviour:
@@ -2282,7 +2282,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99, y: 1.51, z: 0.11030271}
+  m_Size: {x: 0.99, y: 1.51, z: 0.24}
   m_Center: {x: -0.00000015559739, y: 0.64045703, z: 0.00000042381544}
 --- !u!114 &428539966
 MonoBehaviour:
@@ -4180,7 +4180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655359213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 0.15134342, z: -6.18}
+  m_LocalPosition: {x: 0.59, y: 0.15134342, z: -4.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4298,7 +4298,7 @@ MonoBehaviour:
   binarySize: 0
   globalData: 1
   usePositions: 0
-  posOffset: {x: 0, y: 0, z: -6}
+  posOffset: {x: 0, y: 0, z: -4}
   mainCamera: {fileID: 0}
   head: {fileID: 0}
   moving: 0
@@ -8566,7 +8566,7 @@ PrefabInstance:
       objectReference: {fileID: 2321112931429893799, guid: 60d825131aae1234a860b5ec45094e16, type: 3}
     - target: {fileID: 3288750511027299669, guid: 7cf64d51eed210747bb252f2fb9ea211, type: 3}
       propertyPath: shootForce
-      value: 1000
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 8173229208592545651, guid: 7cf64d51eed210747bb252f2fb9ea211, type: 3}
       propertyPath: m_Name
@@ -9044,14 +9044,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584238524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.031732835, y: -0, z: -0, w: 0.9994964}
+  m_LocalPosition: {x: 0, y: 1.18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.637, y: 0, z: 0}
 --- !u!1 &1612670100
 GameObject:
   m_ObjectHideFlags: 0
