@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 2282534712590965716}
   - component: {fileID: 3481845284674763136}
   - component: {fileID: 5600977267804613758}
+  - component: {fileID: 3347075476025098456}
   m_Layer: 0
   m_Name: geo
   m_TagString: Untagged
@@ -286,3 +287,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3347075476025098456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035021795847809840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0043d1d99b835a41b37b1ab682d8d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 5035021795847809840}
