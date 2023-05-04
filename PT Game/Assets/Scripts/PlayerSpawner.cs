@@ -12,7 +12,7 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         player.transform.position = playerSpawn.position;  
-        player.transform.position = Vector3()
+        //player.transform.position = Vector3()
     }
 
     // Update is called once per frame
