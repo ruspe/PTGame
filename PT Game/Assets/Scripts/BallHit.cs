@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpawner : MonoBehaviour
+public class BallHit : MonoBehaviour
 {
-    public GameObject player;
-    public Transform playerSpawn; 
-    
     // Start is called before the first frame update
-   
     void Start()
     {
-        player.transform.position = playerSpawn.position;  
-        //player.transform.position = Vector3()
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Paddle")
+        {
+            transform.position *= -1; 
+        }
     }
 }

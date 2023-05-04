@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class CatchProjectile : MonoBehaviour
 {
     public Transform respawnPoint; // Assign the respawn point for the fireball
     public GameObject fireballPrefab;
+    public TextMeshProUGUI caughtBalltext; 
 
     private bool isTrackingFireball; // Flag to track if a fireball is being tracked
 
