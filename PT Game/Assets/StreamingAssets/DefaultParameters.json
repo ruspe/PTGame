@@ -117,7 +117,39 @@
                 "$type": "RangeParameter",
                 "$id": "12"
             },
-
+            {
+                "min_": 0.1,
+                "max_": 2.0,
+                "value_": 0.5,
+                "tick_": 0.1,
+                "name": "Charge Speed",
+                "alias": "Charge Speed",
+                "description": "Scales the time it takes for the dragon to charge the shot",
+                "$type": "RangeParameter",
+                "$id": "16"
+            },
+            {
+                "min_": 250.0,
+                "max_": 1000.0,
+                "value_": 750.0,
+                "tick_": 50.0,
+                "name": "Shoot Force",
+                "alias": "Shoot Force",
+                "description": "Scales the force of the projectile",
+                "$type": "RangeParameter",
+                "$id": "15"
+            },
+            {
+                "min_": 1.0,
+                "max_": 10.0,
+                "value_": 5.0,
+                "tick_": 1.0,
+                "name": "Time Between Shots",
+                "alias": "Time Between Shots",
+                "description": "Changes the time between shots",
+                "$type": "RangeParameter",
+                "$id": "14"
+            },
             {
                 "min_": 1.0,
                 "max_": 2.0,
@@ -155,6 +187,15 @@
         },
         "Paddle Size": {
             "$ref": "12"
+        },
+        "Charge Speed": {
+            "$ref": "16"
+        },
+        "Time Between Shots": {
+            "$ref": "14"
+        },
+        "Shoot Force": {
+            "$ref": "15"
         },
         "Ball Size": {
             "$ref": "13"

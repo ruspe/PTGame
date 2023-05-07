@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using enableGame;
+using Unity.VisualScripting;
 
 public class shootProjectile : MonoBehaviour
 {
@@ -9,15 +11,24 @@ public class shootProjectile : MonoBehaviour
     [Header("Shoot Settings")]
     public GameObject projectile; //prefab, object that is going to be shot. should have a rigidbody
     public Transform shootPoint; // point to shoot from
-    public float shootForce = 50; // force applied to projectile. affects speed 
-    public float timeBetweenShots = 5f;
-    public float chargeSpeed = .5f;
+    public egFloat shootForce = 750; // force applied to projectile. affects speed 
+    public egFloat timeBetweenShots = 5f;
+    public egFloat chargeSpeed = .5f;
 
     [Header("Aim Settings")]
     public Transform aimLeft;
     public Transform aimRight;
 
-    
+
+    // Awake() is called when the script instance is being loaded.
+    void Awake()
+    {
+        VariableHandler.Instance.Register(ParameterStrings.SHOOTFORCE, shootForce);
+
+        VariableHandler.Instance.Register(ParameterStrings.TIMEBETWEENSHOTS, timeBetweenShots);
+
+        VariableHandler.Instance.Register(ParameterStrings.CHARGESPEED, chargeSpeed);
+    }
 
 
     // Start is called before the first frame update
