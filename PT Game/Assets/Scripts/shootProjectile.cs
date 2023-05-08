@@ -18,6 +18,10 @@ public class shootProjectile : MonoBehaviour
     [Header("Aim Settings")]
     public Transform aimLeft;
     public Transform aimRight;
+    public Transform headLeft;
+    public Transform headRight;
+
+    private moveDragonHead headCtrl;
 
 
     // Awake() is called when the script instance is being loaded.
@@ -37,6 +41,8 @@ public class shootProjectile : MonoBehaviour
        
         anims.SetFloat("chargeSpeed", chargeSpeed);
 
+        headCtrl = GetComponent<moveDragonHead>();
+
         StartCoroutine(timedShoot());
 
     }
@@ -55,18 +61,22 @@ public class shootProjectile : MonoBehaviour
 
     }
 
-    void decideAim() //chooses which hand to shoot at randomly
+     void decideAim() //chooses which hand to shoot at randomly
     {
         int choiceint = Random.Range(0, 2); //generates a 0 or 1, 0 is left 1 is right
         if (choiceint == 0)
         {
             shootPoint.LookAt(aimLeft.position /*+ new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0)*/);
+            headCtrl.targetTransform = headLeft;
         }
 
         else
         {
             shootPoint.LookAt(aimRight.position /*+ new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0)*/);
+            headCtrl.targetTransform = headRight;
+
         }
+
     }
 
     public void chargeShot()
