@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ballCountText;
     public BallCollisionDetector ballCollisionDetectorL;
     public BallCollisionDetector ballCollisionDetectorR;
+
+    //Timer Variables
+    public float timeLeft;
+    public bool timerON;
+
+    public TextMeshProUGUI timerText; 
    
 
     private int answer; 
@@ -24,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
 
         conditionTester.SetActive(false);
-        
+        timerON = true;
        
     }
 
@@ -35,11 +41,23 @@ public class GameManager : MonoBehaviour
 
 
         //Game Conditions: Timer
-
+        if (timerON == true)
+        {
+            if(timeLeft >= 0)
+            {
+                timeLeft -= Time.deltaTime;
+                UpdateTimer(timeLeft); 
+            }
+            else
+            {
+                Debug.Log("Time is up!");
+                timeLeft = 0;
+                timerON = false; 
+                conditionTester.SetActive(true); 
+            }
+        }
 
         //Game Conditions: Hit Ball Count
-
-
         if (ballCollisionDetectorL.ballHit == true)
         {
             ballsHit += 1;
@@ -62,5 +80,15 @@ public class GameManager : MonoBehaviour
         }
 
 
+    }
+
+    void UpdateTimer (float currentTime)
+    {
+        currentTime += 1;
+
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds); 
     }
 }
