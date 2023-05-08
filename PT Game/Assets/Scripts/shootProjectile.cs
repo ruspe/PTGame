@@ -49,12 +49,12 @@ public class shootProjectile : MonoBehaviour
         int choiceint = Random.Range(0, 2); //generates a 0 or 1, 0 is left 1 is right
         if (choiceint == 0)
         {
-            shootPoint.LookAt(aimLeft.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0));
+            shootPoint.LookAt(aimLeft.position /*+ new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0)*/);
         }
 
         else
         {
-            shootPoint.LookAt(aimRight.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0));
+            shootPoint.LookAt(aimRight.position /*+ new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0)*/);
         }
     }
 

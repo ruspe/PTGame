@@ -63,8 +63,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.6468978
+  m_Center: {x: 0.17689776, y: 0, z: 0}
 --- !u!96 &-1369725421131864016
 TrailRenderer:
   serializedVersion: 2
@@ -189,7 +189,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  plane: {fileID: 0}
 --- !u!1 &5035021795847809840
 GameObject:
   m_ObjectHideFlags: 0
