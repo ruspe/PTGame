@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ballCountText;
     public BallCollisionDetector ballCollisionDetectorL;
     public BallCollisionDetector ballCollisionDetectorR;
+    public bool timerCondition;
+    public bool hitBallCondition;
+    public bool bothCondiiton;
+
 
     //Timer Variables
     public float timeLeft;
@@ -22,8 +26,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText; 
    
 
-    private int answer; 
-
+    private int answer;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -39,44 +43,105 @@ public class GameManager : MonoBehaviour
     {
 
 
-
-        //Game Conditions: Timer
-        if (timerON == true)
+        if (timerCondition == true)
         {
-            if(timeLeft >= 0)
+            //Game Conditions: Timer
+            if (timerON == true)
             {
-                timeLeft -= Time.deltaTime;
-                UpdateTimer(timeLeft); 
+                if (timeLeft >= 0)
+                {
+                    timeLeft -= Time.deltaTime;
+                    UpdateTimer(timeLeft);
+                }
+                else
+                {
+                    Debug.Log("Time is up!");
+                    timeLeft = 0;
+                    timerON = false;
+                    conditionTester.SetActive(true);
+                }
             }
-            else
+
+            //Code telling game to not check the other variable
+            ballsHitGoal = 10000; //Insanely high ball hit goal player wont meet
+        }
+        
+
+        if (hitBallCondition == true)
+        {
+            //Game Conditions: Hit Ball Count
+            if (ballCollisionDetectorL.ballHit == true)
             {
-                Debug.Log("Time is up!");
-                timeLeft = 0;
-                timerON = false; 
-                conditionTester.SetActive(true); 
+                ballsHit += 1;
+                ballCountText.text = "Balls Hit: " + ballsHit.ToString();
+                ballCollisionDetectorL.ballHit = false;
+
+            }
+
+            if (ballCollisionDetectorR.ballHit == true)
+            {
+                ballsHit += 1;
+                ballCountText.text = "Balls Hit: " + ballsHit.ToString();
+                ballCollisionDetectorR.ballHit = false;
+
+            }
+
+            if (ballsHit >= ballsHitGoal)
+            {
+                conditionTester.SetActive(true);
+            }
+
+            //Code telling game to turn off other variable
+            timerText.gameObject.SetActive(false);
+            timeLeft = 100000; //Insanely high time player would not meet
+
+        }
+
+        if (bothCondiiton == true)
+        {
+            //Statement to make sure either timer or hit ball condition activates end screen.
+            //Game Conditions: Hit Ball Count
+            if (ballCollisionDetectorL.ballHit == true)
+            {
+                ballsHit += 1;
+                ballCountText.text = "Balls Hit: " + ballsHit.ToString();
+                ballCollisionDetectorL.ballHit = false;
+
+            }
+
+            if (ballCollisionDetectorR.ballHit == true)
+            {
+                ballsHit += 1;
+                ballCountText.text = "Balls Hit: " + ballsHit.ToString();
+                ballCollisionDetectorR.ballHit = false;
+
+            }
+
+            if (ballsHit >= ballsHitGoal)
+            {
+                conditionTester.SetActive(true);
+            }
+            //Game Conditions: Timer
+            if (timerON == true)
+            {
+                if (timeLeft >= 0)
+                {
+                    timeLeft -= Time.deltaTime;
+                    UpdateTimer(timeLeft);
+                }
+                else
+                {
+                    Debug.Log("Time is up!");
+                    timeLeft = 0;
+                    timerON = false;
+                    conditionTester.SetActive(true);
+                }
             }
         }
 
-        //Game Conditions: Hit Ball Count
-        if (ballCollisionDetectorL.ballHit == true)
+        if (timerCondition == false && hitBallCondition == false && bothCondiiton == false)
         {
-            ballsHit += 1;
-            ballCountText.text = "Balls Hit: " + ballsHit.ToString();
-            ballCollisionDetectorL.ballHit = false; 
-            
-        }
-
-        if (ballCollisionDetectorR.ballHit == true)
-        {
-            ballsHit += 1;
-            ballCountText.text = "Balls Hit: " + ballsHit.ToString();
-            ballCollisionDetectorR.ballHit = false;
-
-        }
-
-        if (ballsHit >= ballsHitGoal)
-        {
-            conditionTester.SetActive(true); 
+            bothCondiiton = true; 
         }
 
 

@@ -6788,6 +6788,9 @@ MonoBehaviour:
   ballCountText: {fileID: 716578387}
   ballCollisionDetectorL: {fileID: 238582853}
   ballCollisionDetectorR: {fileID: 6958546079038679766}
+  timerCondition: 0
+  hitBallCondition: 0
+  bothCondiiton: 1
   timeLeft: 10
   timerON: 0
   timerText: {fileID: 865772355}
