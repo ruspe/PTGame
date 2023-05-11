@@ -6,7 +6,8 @@ public class BallCollisionDetector : MonoBehaviour
 {
 
     public bool ballHit;
-    public int testNumber = 5; 
+    public int testNumber = 5;
+    [SerializeField] ParticleSystem collectParticle = null;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class BallCollisionDetector : MonoBehaviour
         if (other.tag == "projectile")
         {
             ballHit = true;
+            collectParticle.Play();
             Destroy(other.gameObject);
             //ballHit = false; 
             //StartCoroutine(ResetBoolTime());
