@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 5818472160290099980}
   - component: {fileID: 5251492962789627247}
   - component: {fileID: 104671349060919832}
-  - component: {fileID: 1609971259669070643}
   m_Layer: 0
   m_Name: Reticle
-  m_TagString: Untagged
+  m_TagString: reticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,16 +98,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1609971259669070643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7982704030533023188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ebd3f4501b9314b9044cfedb409103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secondsToWait: 5
